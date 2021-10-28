@@ -1,12 +1,23 @@
 <template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view/>
-  </div>
+  <v-app id="app">
+
+    <v-content>
+      <router-view></router-view>
+    </v-content>
+
+  </v-app>
 </template>
+
+<script>
+export default {
+  name:'App',
+  data () {
+    return{
+      //
+    }
+  }
+}
+</script>
 
 <style lang="scss">
 #app {
