@@ -1,9 +1,9 @@
 <template>
   <v-app id="app">
 
-    <v-content>
+    <v-main>
       <router-view></router-view>
-    </v-content>
+    </v-main>
 
   </v-app>
 </template>
@@ -20,6 +20,8 @@ export default {
 </script>
 
 <style lang="scss">
+@import "scss/variables";
+
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
