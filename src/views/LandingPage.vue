@@ -2,21 +2,25 @@
     <div class="landingPage">
 
         <v-app-bar dense >
-            <h1> Landing page</h1>
             <v-btn class="loginBtn white--text" >  Log In </v-btn>
         </v-app-bar>
+        
+        <LoginFormComponent/>
 
     </div>
 </template>
 
 <script>
+import VFacebookLogin from 'vue-facebook-login-component'
+
 export default {
+    name: 'LandingPage',
+    components:{
+        VFacebookLogin
+    },
     data() {
         return {
-            dialog: false,
-            items:[
-                {icon: 'mdi-folder', iconClass: 'grey lighten-1 white--text', title: 'photos', subtitle:'jan 9, 2014'}
-            ]
+          //
         }
     }
 }

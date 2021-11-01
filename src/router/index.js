@@ -5,12 +5,12 @@ import LandingPage from '../views/LandingPage.vue'
 Vue.use(VueRouter)
 
 const routes = [{
-        path: '/',
+        path: '/landingpage',
         name: 'LandingPage',
         component: LandingPage
     },
     {
-        path: '/login',
+        path: '/',
         name: 'Login',
         // route level code-splitting
         // this generates a separate chunk (about.[hash].js) for this route
