@@ -8,16 +8,18 @@
             <v-dialog v-model="dialog" persistent max-width="500">
 
                 <template v-slot:activator="{ on, attrs}">
-                    <v-btn class="loginBtn btn" v-bind="attrs" v-on="on"> Log In </v-btn>
+                    
+                    <v-btn class="loginBtn btn" v-bind="attrs" v-on="on" v-if="loginBtnVisible"> Log In </v-btn>
+
                 </template>
-                
+               
                 <LoginFormComponent/>
 
             </v-dialog>
 
         </v-app-bar>
 
-        Login Page
+        Login Page {{userName}}
 
         
 
@@ -28,7 +30,7 @@
 import LoginFormComponent from '../components/LoginFormComponent'
 
 export default {
-    name: 'LandingPage',
+    name: 'Login',
     data () {
       return {
         dialog: false,
@@ -37,10 +39,30 @@ export default {
     components:{
         LoginFormComponent,
     },
-
+    computed: {
+        userInfos: function(){
+            return this.$store.state.user
+        },
+        userName(){
+            if(this.userInfos){
+                return this.userInfos.IU
+            }
+            return 'Nobody'
+        },
+        loginBtnVisible(){
+            return this.userInfos==null
+        }
+    },
     methods: {
         
     },
+    watch: {       
+        userInfos: function(){
+            if(this.userInfos){
+                this.dialog = false
+            }
+        } 
+    }
 }
 </script>
 
