@@ -8,9 +8,7 @@
             <v-dialog v-model="dialog" persistent max-width="500">
 
                 <template v-slot:activator="{ on, attrs}">
-                    
                     <v-btn class="loginBtn btn" v-bind="attrs" v-on="on" v-if="loginBtnVisible"> Log In </v-btn>
-
                 </template>
                
                 <LoginFormComponent/>
@@ -19,11 +17,9 @@
 
         </v-app-bar>
 
-        Login Page {{userName}}
+        <p> Login Page </p>
 
-        
-
-   </div>
+    </div>
 </template>
 
 <script>
@@ -45,9 +41,15 @@ export default {
         },
         userName(){
             if(this.userInfos){
-                return this.userInfos.IU
+                return this.userInfos.Re
             }
-            return 'Nobody'
+            return 'NoName'
+        },
+        userMail(){
+            if(this.userInfos){
+                return this.userInfos.Xt
+            }
+            return 'NoMail'
         },
         loginBtnVisible(){
             return this.userInfos==null

@@ -58,6 +58,9 @@ export default {
       googleLogin: function(){
         this.$gAuth.signIn().then((result) => {
           let userProfile = result.getBasicProfile()
+          
+          // print userData
+          console.log(userProfile);
           this.$store.commit("changeUser", userProfile)
           this.$router.push('/home')
         }).catch((err) => {
